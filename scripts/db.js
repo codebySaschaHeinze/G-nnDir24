@@ -6,7 +6,7 @@ let products = [
       "Pikante Peperoni, scharfe Jalapeños und ein Hauch Ziegenkäse.",
   },
   {
-    name: "Quackmire’s Special",
+    name: "Quackmire’s Giggity Special",
     price: 10.99,
     description: "Würzig-scharfe Salami trifft auf doppelt Käse.",
   },
