@@ -44,25 +44,17 @@ nav {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  /* padding-left: clamp(5px, 3vw, 40px);
-  padding-right: clamp(5px, 3vw, 40px); */
 }
 
 main {
-  flex: 1;
-  max-width: 1920px;
-  width: 100%;
-  /* margin: 40px auto; */
-  /* padding: clamp(10px, 5vw, 80px); */
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 footer {
   display: flex;
-  /* position: fixed;
-  z-index: 10;
-  bottom: 0;
-  left: 0;
-  right: 0; */
   height: 60px;
   background-color: rgb(1, 58, 0);
 }
@@ -81,10 +73,4 @@ footer {
 .footer-links {
   display: flex;
   flex-direction: column;
-}
-
-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
