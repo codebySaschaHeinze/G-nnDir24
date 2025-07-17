@@ -4,6 +4,7 @@
 
 .banner-bg img {
   width: 100%;
+  height: 120px;
   object-fit: cover;
 }
 
@@ -11,11 +12,27 @@
   height: 70px;
   width: auto;
   border-radius: 50%;
-  position: static;
-  left: 50%;
+  position: relative;
+  bottom: 160px;
+}
+
+.header-name h3 {
+  width: 100%;
+  padding: 20px;
+  font-weight: 600;
+  font-size: clamp(1rem, 1.4rem, 1.8rem);
 }
 
 .header-name p {
   width: 100%;
-  margin: 20px;
+  padding: 20px;
+  font-weight: 200;
+  font-size: 1rem;
+  color: rgb(28, 111, 86);
+}
+
+aside h4 {
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 5px;
 }

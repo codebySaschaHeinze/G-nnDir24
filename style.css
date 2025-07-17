@@ -1,22 +1,40 @@
+.page-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 .header-section {
   display: flex;
   flex-direction: column;
-  width: 70%;
-  height: 200px;
-  background-color: rgba(0, 7, 146, 0.337);
+  width: 100%;
+  background-color: rgba(0, 7, 146, 0.743);
   align-items: center;
+  justify-content: center;
   position: relative;
 }
 
 .banner-bg {
   display: flex;
   width: 100%;
-  height: 120px;
 }
 
 .header-name {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
   background-color: rgb(186, 186, 186);
-  height: 120px;
   width: 100%;
   display: flex;
+}
+
+.shopping-cart {
+  background-color: rgb(218, 218, 218);
+  width: 30vw;
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  border: 2px solid rgb(28, 111, 86);
 }
