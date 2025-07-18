@@ -90,7 +90,7 @@
   color: rgba(0, 0, 0, 0.696);
 }
 
-.cart-products-container {
+.product-and-price-in-cart {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -100,11 +100,11 @@
   border-radius: 4px;
 }
 
-.cart-product-and-price {
+.product-and-price-in-cart {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin: 5px 20px;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 
 .cart-plus-minus {
@@ -116,6 +116,7 @@
 
 .empty-cart {
   display: flex;
+  align-items: center;
   justify-content: center;
   padding-top: 100px;
 }
