@@ -9,7 +9,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: rgba(0, 7, 146, 0.743);
+  height: 160px;
+  background-color: rgba(0, 146, 90, 0.743);
   align-items: center;
   justify-content: center;
   position: relative;
@@ -24,7 +25,7 @@
   display: flex;
   align-items: start;
   flex-direction: column;
-  background-color: rgb(186, 186, 186);
+  background-color: rgb(177, 195, 174);
   width: 100%;
   display: flex;
 }
@@ -37,4 +38,36 @@
   height: calc(100vh - 120px);
   overflow-y: auto;
   border: 2px solid rgb(28, 111, 86);
+}
+
+.course-container {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.394);
+  width: 100%;
+  align-items: flex-end;
+  height: 80px;
+}
+
+.content-section {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.399);
+  justify-content: space-between;
+  padding: 5px 5px 5px 20px;
+  margin: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.266);
+}
+
+.card-plus-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  height: 26px;
+  width: 26px;
+  cursor: pointer;
+  margin: 3px;
 }

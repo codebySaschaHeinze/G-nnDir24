@@ -4,7 +4,7 @@
 
 .banner-bg img {
   width: 100%;
-  height: 120px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -18,7 +18,7 @@
 
 .header-name h3 {
   width: 100%;
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
   font-weight: 600;
   font-size: clamp(1rem, 1.4rem, 1.8rem);
 }
@@ -35,4 +35,29 @@ aside h4 {
   text-align: center;
   font-size: 1.1rem;
   padding: 5px;
+}
+
+.course-container p {
+  padding: 0 0 0px 20px;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.card-plus-img img {
+  height: 26px;
+  width: 26px;
+}
+
+.card-name,
+.card-price {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.card-description {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  color: rgba(0, 0, 0, 0.696);
 }
