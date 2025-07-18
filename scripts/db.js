@@ -1,44 +1,42 @@
 let products = [
   {
-    name: "Stewie’s Evil Delight",
+    name: "Pizza Diavola",
     price: 11.49,
-    description:
-      "Pikante Peperoni, scharfe Jalapeños und ein Hauch Ziegenkäse.",
+    description: "Scharfe Salami, Jalapeños, Peperoniwurst und Tomatensauce.",
   },
   {
-    name: "Quackmire’s Giggity Special",
+    name: "Pizza Salami Classico",
     price: 10.99,
-    description: "Würzig-scharfe Salami trifft auf doppelt Käse.",
+    description: "Würzige Salami auf Tomaten-Mozzarella-Basis – der Klassiker.",
   },
   {
-    name: "Lois’ Veggie Delight",
+    name: "Pizza Verdura",
     price: 9.99,
-    description:
-      "Frische Paprika, Champignons, Zwiebeln und Brokkoli auf Tomatensauce.",
+    description: "Paprika, Zwiebeln, Brokkoli und Champignons – alles frisch!",
   },
   {
-    name: "Clevelands BBQ Dream",
+    name: "Pizza BBQ Chicken",
     price: 11.49,
-    description: "Zarte Hähnchenstücke, rauchige BBQ-Soße und rote Zwiebeln.",
+    description: "Hähnchen, BBQ-Sauce, rote Zwiebeln und Cheddar.",
   },
   {
-    name: "Joe’s Power Pizza",
+    name: "Pizza American Style",
     price: 12.49,
-    description: "Extra viel Mozzarella, Bacon, Peperoni und Jalapeños.",
+    description: "Mozzarella, Bacon, Peperoni und Jalapeños auf dickem Teig.",
   },
   {
-    name: "Chris’ Cheesy Beast",
+    name: "Pizza Käse Deluxe",
     price: 10.99,
-    description: "Doppelt Käse, extra Teig, fette Salamischeiben.",
+    description: "Doppelt Käse, dicker Boden, würzige Salamischeiben.",
   },
   {
-    name: "Brian’s Truffle Temptation",
+    name: "Pizza Truffo",
     price: 12.99,
-    description: "Edle Trüffelcreme, Spinat, Mozzarella und schwarze Oliven.",
+    description: "Trüffelcreme, Spinat, schwarze Oliven und Mozzarella.",
   },
   {
-    name: "Meg’s Four Cheese Classic",
+    name: "Pizza Quattro Formaggi",
     price: 9.49,
-    description: "Mozzarella, Gouda, Gorgonzola und Parmesan.",
+    description: "Vier Käsesorten: Mozzarella, Gouda, Gorgonzola und Parmesan.",
   },
 ];
