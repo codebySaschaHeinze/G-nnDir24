@@ -21,6 +21,7 @@
   padding: 20px 20px 20px 20px;
   font-weight: 600;
   font-size: clamp(1rem, 1.4rem, 1.8rem);
+  /* background-color: rgba(128, 255, 0, 0.466); */
 }
 
 .header-name p {
@@ -48,16 +49,25 @@ aside h4 {
   width: 26px;
 }
 
-.card-name,
-.card-price {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-weight: 600;
-  font-size: 1.1rem;
+.cart-plus-minus img {
+  height: auto;
+  width: 24px;
 }
 
-.card-description {
-  padding-top: 15px;
-  padding-bottom: 10px;
-  color: rgba(0, 0, 0, 0.696);
+.cart-plus-minus button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-plus-minus button:hover {
+  transform: scale(1.07);
+}
+
+.button-minus {
+  padding-bottom: 6px;
+}
+
+.card-plus-img:hover {
+  transform: scale(1.05);
 }

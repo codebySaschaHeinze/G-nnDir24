@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="./styles/assets.css" />
     <link rel="stylesheet" href="./styles/standard.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
-    <script src="./scripts/db.js"></script>
+    <script src="./scripts/db.js" defer></script>
     <script src="./scripts/template.js" defer></script>
     <script src="./script.js" defer></script>
   </head>
-  <body>
+  <body onload="init()">
     <nav>
       <div class="nav-content">
         <img
@@ -40,29 +40,15 @@
         <section class="middle-section">
           <div class="course-container"><p>Hauptspeisen</p></div>
         </section>
-        <section class="content-section">
-          <div>
-            <p class="card-name">Pizza Salami</p>
-            <p class="card-description">
-              Würzige Salami auf Tomaten-Mozzarella-Basis – der Klassiker.
-            </p>
-            <p class="card-price">15.99 €</p>
-          </div>
-          <button class="card-plus-img">
-            <img src="./assets/img/plus.png" alt="" />
-          </button>
-        </section>
+        <section id="all_products" class="all-products"></section>
       </main>
       <aside class="shopping-cart">
         <h4>Warenkorb</h4>
-        <div class="cart-products-container">
-          <div class="cart-product-and-price">
-            <p>1 Pizza</p>
-            <p>8,99 €</p>
-          </div>
-          <div class="cart-plus-minus">
-            <button><img src="./assets/img/minus.png" alt="" /></button>
-            <button><img src="./assets/img/plus.png" alt="" /></button>
+        <div>
+          <div class="cart-products-container">
+            <div id="empty_cart" class="empty-cart">
+              <p>Gönn dir was leckeres!</p>
+            </div>
           </div>
         </div>
       </aside>
