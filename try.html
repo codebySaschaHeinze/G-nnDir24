@@ -8,16 +8,19 @@
     <img src="./assets/img/plus.png" alt="" />
   </button>
 </div>
-// // // // //
-<div class="product-and-price-in-cart">
-  <p>1 Pizza</p>
-  <p>8,99 €</p>
-</div>
-<div class="cart-plus-minus">
-  <button class="button-minus">
-    <img src="./assets/img/minus.png" alt="" />
-  </button>
-  <button class="button-plus">
-    <img src="./assets/img/plus.png" alt="" />
-  </button>
+// // // // // // // soll in den cart-products-container //
+<div class="product-price-plus-minus-container">
+  <div class="product-and-price">
+    <p>Produkt</p>
+    <p>12.34 €</p>
+  </div>
+  <div class="plus-and-minus">
+    <button onclick="minusCartProduct()" class="minus-button-cart">
+      <img class="minus-button-img" src="./assets/img/minus.png" alt="" />
+    </button>
+    <p class="cart-product-amount">2</p>
+    <button onclick="plusCartProduct()" class="plus-button-cart">
+      <img class="plus-button-img" src="./assets/img/plus.png" alt="" />
+    </button>
+  </div>
 </div>
