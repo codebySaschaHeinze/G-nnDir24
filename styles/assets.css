@@ -49,25 +49,49 @@ aside h4 {
   width: 26px;
 }
 
-.cart-plus-minus img {
-  height: auto;
-  width: 24px;
+.card-plus-img:hover {
+  transform: scale(1.05);
 }
 
-.cart-plus-minus button {
-  background: transparent;
+.shopping-cart h4 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.minus-button-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
   border: none;
+  background: transparent;
   cursor: pointer;
 }
 
-.cart-plus-minus button:hover {
+.minus-button-cart:hover {
   transform: scale(1.07);
 }
 
-.button-minus {
-  padding-bottom: 6px;
+.minus-button-img {
+  height: auto;
+  width: 26px;
 }
 
-.card-plus-img:hover {
-  transform: scale(1.05);
+.plus-button-cart {
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.plus-button-cart:hover {
+  transform: scale(1.07);
+}
+
+.plus-button-img {
+  height: auto;
+  width: 26px;
 }
