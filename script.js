@@ -6,6 +6,7 @@ function init() {
 
 let cart = [];
 
+// productIndex enthält alle Produkte vom Array
 function renderProducts() {
   let productsRef = document.getElementById("all_products");
   productsRef.innerHTML = "";
@@ -14,7 +15,7 @@ function renderProducts() {
     productsRef.innerHTML += addProductsTemplate(productIndex);
   }
 }
-
+// cartIndex enthält alle Produkte im Warenkorb
 function renderCart() {
   let cartRef = document.getElementById("cart_products_container");
   cartRef.innerHTML = "";
@@ -24,7 +25,7 @@ function renderCart() {
   }
 }
 
-// prüft ob das cart-array leer ist und gibt/entfernt d-none
+// prüft ob das cart-array (Warenkorb) leer ist und gibt/entfernt d-none
 function ifCartIsEmpty() {
   let emptyCart = document.getElementById("empty_cart");
   if (cart.length == 0) {
@@ -33,10 +34,10 @@ function ifCartIsEmpty() {
     emptyCart.classList.add("d-none");
   }
 }
-
-function addToCart(index) {
+// Prduktkarte zum Warenkorb hinzufügen
+function addToCart(productIndex) {
   for (let cartIndex = 0; cartIndex < cart.length; cartIndex++) {
-    if (cart[cartIndex].name === products[index].name) {
+    if (cart[cartIndex].name === products[productIndex].name) {
       cart[cartIndex].amount++;
       renderCart();
       ifCartIsEmpty();
@@ -45,10 +46,25 @@ function addToCart(index) {
   }
 
   cart.push({
-    name: products[index].name,
+    name: products[productIndex].name,
     amount: 1,
-    price: products[index].price,
+    price: products[productIndex].price,
   });
+  renderCart();
+  ifCartIsEmpty();
+}
+
+// Cart - price und amount erhöhen
+function plusCartProduct(cartIndex) {
+  cart[cartIndex].amount++;
+  renderCart();
+  ifCartIsEmpty();
+}
+
+// Cart - Produkt verringern bei Minus (bei < 1 löschen)
+
+function minusCartProduct(cartIndex) {
+  cart[cartIndex].amount--;
   renderCart();
   ifCartIsEmpty();
 }
