@@ -2,6 +2,7 @@ function init() {
   renderProducts();
   ifCartIsEmpty();
   renderCart();
+  renderTotalPrice();
 }
 
 let cart = [];
@@ -14,8 +15,9 @@ function renderProducts() {
   for (let productIndex = 0; productIndex < products.length; productIndex++) {
     productsRef.innerHTML += addProductsTemplate(productIndex);
   }
-  productsRef.innerHTML += totalPriceButtonTemplate();
+  renderTotalPrice();
 }
+
 // cartIndex enthält alle Produkte im Warenkorb
 function renderCart() {
   let cartRef = document.getElementById("cart_products_container");
@@ -35,13 +37,16 @@ function ifCartIsEmpty() {
     emptyCart.classList.add("d-none");
   }
 }
+
 // Prduktkarte zum Warenkorb hinzufügen
 function addToCart(productIndex) {
   for (let cartIndex = 0; cartIndex < cart.length; cartIndex++) {
     if (cart[cartIndex].name === products[productIndex].name) {
       cart[cartIndex].amount++;
       renderCart();
+      renderTotalPrice();
       ifCartIsEmpty();
+
       return;
     }
   }
@@ -52,6 +57,7 @@ function addToCart(productIndex) {
     price: products[productIndex].price,
   });
   renderCart();
+  renderTotalPrice();
   ifCartIsEmpty();
 }
 
@@ -59,12 +65,11 @@ function addToCart(productIndex) {
 function plusCartProduct(cartIndex) {
   cart[cartIndex].amount++;
   renderCart();
+  renderTotalPrice();
   ifCartIsEmpty();
 }
 
-// Warenkorb - Produkt verringern
-// sollte amount 1 oder kleiner sein,
-
+// Warenkorb - Produkt verringern (sollte amount 1 oder kleiner sein - raussplicen)
 function minusCartProduct(cartIndex) {
   if (cart[cartIndex].amount <= 1) {
     cart.splice(cartIndex, 1);
@@ -72,5 +77,24 @@ function minusCartProduct(cartIndex) {
     cart[cartIndex].amount--;
   }
   renderCart();
+  renderTotalPrice();
   ifCartIsEmpty();
+}
+
+// alle product.price´s addieren (und * product.amount).
+function calculateAllCartProducts(cart) {
+  let sum = 0;
+  for (
+    let totalPriceIndex = 0;
+    totalPriceIndex < cart.length;
+    totalPriceIndex++
+  ) {
+    sum += cart[totalPriceIndex].price * cart[totalPriceIndex].amount;
+  }
+  return sum;
+}
+
+function renderTotalPrice() {
+  let totalPriceRef = document.getElementById("total_price_container");
+  totalPriceRef.innerHTML = totalPriceButtonTemplate();
 }
