@@ -54,17 +54,22 @@ function addToCart(productIndex) {
   ifCartIsEmpty();
 }
 
-// Cart - price und amount erhöhen
+// Warenkorb - price und amount erhöhen
 function plusCartProduct(cartIndex) {
   cart[cartIndex].amount++;
   renderCart();
   ifCartIsEmpty();
 }
 
-// Cart - Produkt verringern bei Minus (bei < 1 löschen)
+// Warenkorb - Produkt verringern
+// sollte amount 1 oder kleiner sein,
 
 function minusCartProduct(cartIndex) {
-  cart[cartIndex].amount--;
+  if (cart[cartIndex].amount <= 1) {
+    cart.splice(cartIndex, 1);
+  } else {
+    cart[cartIndex].amount--;
+  }
   renderCart();
   ifCartIsEmpty();
 }
