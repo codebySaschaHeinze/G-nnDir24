@@ -14,6 +14,7 @@ function renderProducts() {
   for (let productIndex = 0; productIndex < products.length; productIndex++) {
     productsRef.innerHTML += addProductsTemplate(productIndex);
   }
+  productsRef.innerHTML += totalPriceButtonTemplate();
 }
 // cartIndex enthält alle Produkte im Warenkorb
 function renderCart() {

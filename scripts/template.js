@@ -32,3 +32,11 @@ function addProductsToCartTemplate(cartIndex) {
   </div>
 </div>`;
 }
+
+function totalPriceButtonTemplate() {
+  return /*html*/ `<div class="total-price-container">
+            <button class="total-price-button" id="total_price_button">
+              Gesamtpreis: 17,99 €
+            </button>
+          </div>`;
+}
