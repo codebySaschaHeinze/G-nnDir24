@@ -90,29 +90,11 @@ function renderTotalPrice() {
   let mobileRef = document.getElementById("total_price_container");
   let desktopRef = document.getElementById("total_price_container_desktop");
   if (mobileRef) {
-    mobileRef.innerHTML = renderTotalPriceButtonMobile();
+    mobileRef.innerHTML = renderTotalPriceButtonMobileTemplate();
   }
   if (desktopRef) {
-    desktopRef.innerHTML = renderTotalPriceButtonDesktop();
+    desktopRef.innerHTML = renderTotalPriceButtonDesktopTemplate();
   }
-}
-
-// Button mit Gesamtsumme in mobile Variante erstellen
-function renderTotalPriceButtonMobile() {
-  return `
-    <button onclick="renderCartOverlay()" class="total-price-button">
-      Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €
-    </button>
-  `;
-}
-
-// Button mit Gesamtsumme in desktop Variante erstellen
-function renderTotalPriceButtonDesktop() {
-  return `
-    <button class="total-price-button">
-      Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €
-    </button>
-  `;
 }
 
 // rendert das Warenkorb Overlay

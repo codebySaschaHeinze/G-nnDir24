@@ -35,14 +35,6 @@ function addProductsToCartTemplate(cartIndex) {
           `;
 }
 
-function totalPriceButtonTemplate() {
-  return `
-            <button onclick="renderCartOverlay()" class="total-price-button" id="total_price_button">
-              Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €
-            </button>
-        `;
-}
-
 function addProductsToCartOverlayTemplate(cartIndex) {
   let product = cart[cartIndex];
   return `
@@ -64,6 +56,7 @@ function addProductsToCartOverlayTemplate(cartIndex) {
           `;
 }
 
+// Warenkorb wird gerendert
 function cartOverlayTemplate() {
   if (cart.length === 0) {
     return `
@@ -87,4 +80,22 @@ function cartOverlayTemplate() {
               `;
 
   return cartRef;
+}
+
+// Button mit Gesamtsumme in mobile Variante erstellen
+function renderTotalPriceButtonMobileTemplate() {
+  return `
+            <button onclick="renderCartOverlay()" class="total-price-button">
+              Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €
+            </button>
+          `;
+}
+
+// Button mit Gesamtsumme in desktop Variante erstellen
+function renderTotalPriceButtonDesktopTemplate() {
+  return `
+            <button class="total-price-button">
+              Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €
+            </button>
+          `;
 }
