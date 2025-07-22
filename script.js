@@ -93,8 +93,10 @@ function calculateAllCartProducts(cart) {
   }
   return sum;
 }
-
+// Gesamtpreis vom Warenkorb im Button anzeigen
 function renderTotalPrice() {
   let totalPriceRef = document.getElementById("total_price_container");
   totalPriceRef.innerHTML = totalPriceButtonTemplate();
 }
+
+// bei onclick auf Gesamtpreisbutton rendert ein Bildschirm

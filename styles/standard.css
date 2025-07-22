@@ -42,6 +42,8 @@ nav {
   display: flex;
   z-index: 1;
   pointer-events: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 main {
@@ -61,12 +63,13 @@ footer {
 .footer-content {
   max-width: 1920px;
   width: 100%;
-  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: clamp(5px, 3vw, 40px);
   padding-right: clamp(5px, 3vw, 40px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-links {
