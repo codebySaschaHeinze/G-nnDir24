@@ -1,3 +1,4 @@
+// alle Produkte im Content rendern
 function addProductsTemplate(productIndex) {
   let product = products[productIndex];
   return `
@@ -14,6 +15,7 @@ function addProductsTemplate(productIndex) {
           `;
 }
 
+// Warenkorb rendern
 function addProductsToCartTemplate(cartIndex) {
   let product = cart[cartIndex];
   return `
@@ -35,6 +37,7 @@ function addProductsToCartTemplate(cartIndex) {
           `;
 }
 
+// ausgewählte Produkte zum Warenkorb hinzufügen
 function addProductsToCartOverlayTemplate(cartIndex) {
   let product = cart[cartIndex];
   return `
@@ -56,20 +59,17 @@ function addProductsToCartOverlayTemplate(cartIndex) {
           `;
 }
 
-// Warenkorb wird gerendert
+// Warenkorb im mobile wird gerendert
 function cartOverlayTemplate() {
   if (cart.length === 0) {
     return `
             <div class="empty-cart"><p>Gönn dir was leckeres!</p></div>
            `;
   }
-
   let cartRef = "";
-
   for (let i = 0; i < cart.length; i++) {
     cartRef += addProductsToCartOverlayTemplate(i);
   }
-
   cartRef += `
                 <button onclick="orderAccepted()" class="total-price-button">
                   Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €

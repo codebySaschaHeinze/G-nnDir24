@@ -28,7 +28,7 @@ function renderCart() {
   }
 }
 
-// prüft ob das cart-array (Warenkorb) leer ist und gibt/entfernt d-none
+// prüft ob Warenkorb leer ist und gibt/entfernt d-none
 function ifCartIsEmpty() {
   let emptyCart = document.getElementById("empty_cart");
   if (cart.length == 0) {
