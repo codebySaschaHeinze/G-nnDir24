@@ -84,19 +84,19 @@ function minusCartProduct(cartIndex) {
 // alle product.price´s addieren (und * product.amount).
 function calculateAllCartProducts(cart) {
   let sum = 0;
-  for (
-    let totalPriceIndex = 0;
-    totalPriceIndex < cart.length;
-    totalPriceIndex++
-  ) {
+  for (let totalPriceIndex = 0; totalPriceIndex < cart.length; totalPriceIndex++) {
     sum += cart[totalPriceIndex].price * cart[totalPriceIndex].amount;
   }
   return sum;
 }
 // Gesamtpreis vom Warenkorb im Button anzeigen
 function renderTotalPrice() {
-  let totalPriceRef = document.getElementById("total_price_container");
-  totalPriceRef.innerHTML = totalPriceButtonTemplate();
+  let totalMobile = document.getElementById("total_price_container");
+  let totalDesktop = document.getElementById("total_price_container_desktop");
+  let template = totalPriceButtonTemplate();
+
+  if (totalMobile) totalMobile.innerHTML = template;
+  if (totalDesktop) totalDesktop.innerHTML = template;
 }
 
 // bei onclick auf Gesamtpreisbutton rendert ein Warenkorb overlay

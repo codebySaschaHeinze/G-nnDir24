@@ -21,7 +21,7 @@
 }
 
 .header-name h3 {
-  width: 100%;
+  width: 70%;
   padding: 20px 20px 20px 20px;
   font-weight: 600;
   font-size: clamp(1rem, 1.4rem, 1.8rem);
@@ -29,7 +29,7 @@
 }
 
 .header-name p {
-  width: 100%;
+  width: 70%;
   padding: 20px;
   font-weight: 200;
   font-size: 1rem;
@@ -120,6 +120,7 @@ aside h4 {
   padding-right: 15px;
   border: 1.5px solid rgb(0, 107, 0);
   box-shadow: 0 0 7px 1px rgba(0, 107, 0, 0.591);
+  pointer-events: auto;
 }
 
 .total-price-button:hover {

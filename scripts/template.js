@@ -32,6 +32,7 @@ function addProductsToCartTemplate(cartIndex) {
                   </button>
                 </div>
               </div>
+              
           `;
 }
 
