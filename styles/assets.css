@@ -125,3 +125,7 @@ aside h4 {
 .total-price-button:hover {
   transform: scale(1.01);
 }
+
+.cart-overlay-container h4 {
+  margin-top: 20px;
+}

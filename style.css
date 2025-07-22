@@ -35,6 +35,8 @@
 
 .all-products {
   position: relative;
+  width: 100%;
+  z-index: 1;
 }
 
 .shopping-cart {
@@ -148,5 +150,26 @@
   z-index: 10;
   display: flex;
   justify-content: center;
-  pointer-events: none;
+  pointer-events: auto;
+}
+
+.cart-overlay-container {
+  background-color: rgb(255, 255, 255);
+  width: 50vw;
+  height: 70vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 2px solid rgb(28, 111, 86);
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 5px;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 10px 5px rgba(28, 111, 86, 0.333);
 }

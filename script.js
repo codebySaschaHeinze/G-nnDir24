@@ -99,4 +99,15 @@ function renderTotalPrice() {
   totalPriceRef.innerHTML = totalPriceButtonTemplate();
 }
 
-// bei onclick auf Gesamtpreisbutton rendert ein Bildschirm
+// bei onclick auf Gesamtpreisbutton rendert ein Warenkorb overlay
+function renderCartOverlay() {
+  let overlayRef = document.getElementById("cart_overlay_container");
+  overlayRef.classList.remove("d-none");
+  overlayRef.innerHTML = addProductsToCartOverlayTemplate();
+}
+
+// bei click auf X schließt das erste overlay
+function closeCartOverlay() {}
+
+// bei click auf Bestellen schließt das aktuelle overlay und ein neues erscheint (Bestellung entgegengenommen)
+function orderAccepted() {}
