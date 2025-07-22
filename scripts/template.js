@@ -5,9 +5,7 @@ function addProductsTemplate(productIndex) {
                 <div>
                   <p class="card-name">${product.name}</p>
                   <p class="card-description">${product.description}</p>
-                  <p class="card-price">${product.price
-                    .toFixed(2)
-                    .replace(".", ",")} €</p>
+                  <p class="card-price">${product.price.toFixed(2).replace(".", ",")} €</p>
                  </div>
                  <button onclick="addToCart(${productIndex})" class="card-plus-img">
                 <img src="./assets/imgs/plus.png" alt="" />
@@ -22,9 +20,7 @@ function addProductsToCartTemplate(cartIndex) {
               <div class="product-price-plus-minus-container">
                 <div class="product-and-price">
                   <p>${product.name}</p>
-                  <p>${(product.price * product.amount)
-                    .toFixed(2)
-                    .replace(".", ",")} €</p>
+                  <p>${(product.price * product.amount).toFixed(2).replace(".", ",")} €</p>
                 </div>
                 <div class="plus-and-minus">
                   <button onclick="minusCartProduct(${cartIndex})" class="minus-button-cart">
@@ -42,9 +38,7 @@ function addProductsToCartTemplate(cartIndex) {
 function totalPriceButtonTemplate() {
   return `
               <button onclick="renderCartOverlay()" class="total-price-button" id="total_price_button">
-                Gesamtpreis: ${calculateAllCartProducts(cart)
-                  .toFixed(2)
-                  .replace(".", ",")} €
+                Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €
               </button>
         `;
 }
@@ -54,9 +48,7 @@ function addProductsToCartOverlayTemplate() {
               <div class="product-price-plus-minus-container">
                 <div class="product-and-price">
                   <p>${product.name}</p>
-                  <p>${(product.price * product.amount)
-                    .toFixed(2)
-                    .replace(".", ",")} €</p>
+                  <p>${(product.price * product.amount).toFixed(2).replace(".", ",")} €</p>
                 </div>
                 <div class="plus-and-minus">
                   <button onclick="minusCartProduct(${cartIndex})" class="minus-button-cart">
@@ -70,8 +62,6 @@ function addProductsToCartOverlayTemplate() {
               </div>
             <div><h4>Warenkorb</h4></div>
           <button onclick="" class="total-price-button" id="total_price_button">
-            Gesamtpreis: ${calculateAllCartProducts(cart)
-              .toFixed(2)
-              .replace(".", ",")} €
+            Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €
           </button>`;
 }
