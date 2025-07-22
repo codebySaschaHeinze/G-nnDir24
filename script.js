@@ -46,16 +46,10 @@ function addToCart(productIndex) {
       renderCart();
       renderTotalPrice();
       ifCartIsEmpty();
-
       return;
     }
   }
-
-  cart.push({
-    name: products[productIndex].name,
-    amount: 1,
-    price: products[productIndex].price,
-  });
+  cart.push({ name: products[productIndex].name, amount: 1, price: products[productIndex].price });
   renderCart();
   renderTotalPrice();
   ifCartIsEmpty();
@@ -67,6 +61,7 @@ function plusCartProduct(cartIndex) {
   renderCart();
   renderTotalPrice();
   ifCartIsEmpty();
+  renderCartOverlayContent();
 }
 
 // Warenkorb - Produkt verringern (sollte amount 1 oder kleiner sein - raussplicen)
@@ -79,35 +74,58 @@ function minusCartProduct(cartIndex) {
   renderCart();
   renderTotalPrice();
   ifCartIsEmpty();
+  renderCartOverlayContent();
 }
 
 // alle product.price´s addieren (und * product.amount).
 function calculateAllCartProducts(cart) {
-  let sum = 0;
+  let totalPrices = 0;
   for (let totalPriceIndex = 0; totalPriceIndex < cart.length; totalPriceIndex++) {
-    sum += cart[totalPriceIndex].price * cart[totalPriceIndex].amount;
+    totalPrices += cart[totalPriceIndex].price * cart[totalPriceIndex].amount;
   }
-  return sum;
+  return totalPrices;
 }
 // Gesamtpreis vom Warenkorb im Button anzeigen
 function renderTotalPrice() {
-  let totalMobile = document.getElementById("total_price_container");
-  let totalDesktop = document.getElementById("total_price_container_desktop");
-  let template = totalPriceButtonTemplate();
-
-  if (totalMobile) totalMobile.innerHTML = template;
-  if (totalDesktop) totalDesktop.innerHTML = template;
+  let mobileRef = document.getElementById("total_price_container");
+  let desktopRef = document.getElementById("total_price_container_desktop");
+  if (mobileRef) {
+    mobileRef.innerHTML = renderTotalPriceButtonMobile();
+  }
+  if (desktopRef) {
+    desktopRef.innerHTML = renderTotalPriceButtonDesktop();
+  }
 }
 
-// bei onclick auf Gesamtpreisbutton rendert ein Warenkorb overlay
+// Button mit Gesamtsumme in mobile Variante erstellen
+function renderTotalPriceButtonMobile() {
+  return `
+    <button onclick="renderCartOverlay()" class="total-price-button">
+      Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €
+    </button>
+  `;
+}
+
+// Button mit Gesamtsumme in desktop Variante erstellen
+function renderTotalPriceButtonDesktop() {
+  return `
+    <button class="total-price-button">
+      Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €
+    </button>
+  `;
+}
+
+// rendert das Warenkorb Overlay
 function renderCartOverlay() {
-  let overlayRef = document.getElementById("cart_overlay_container");
+  const overlayRef = document.getElementById("cart_overlay_container");
   overlayRef.classList.remove("d-none");
-  overlayRef.innerHTML = addProductsToCartOverlayTemplate();
+  renderCartOverlayContent();
 }
 
-// bei click auf X schließt das erste overlay
-function closeCartOverlay() {}
-
-// bei click auf Bestellen schließt das aktuelle overlay und ein neues erscheint (Bestellung entgegengenommen)
-function orderAccepted() {}
+// bei onclick auf Gesamtpreisbutton rendert der Warenkorb im Overlay
+function renderCartOverlayContent() {
+  const overlayRef = document.getElementById("cart_overlay_container");
+  let cartRef = `<h4>Warenkorb</h4>`;
+  cartRef += cartOverlayTemplate();
+  overlayRef.innerHTML = cartRef;
+}
