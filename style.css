@@ -139,10 +139,11 @@
 
 .total-price-container {
   position: sticky;
-  width: auto;
+
   bottom: 50px;
   text-align: center;
   z-index: 10;
   display: flex;
   justify-content: center;
+  pointer-events: none;
 }
