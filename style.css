@@ -43,7 +43,8 @@
   height: calc(100vh - 60px);
   overflow-y: auto;
   border: 2px solid rgb(28, 111, 86);
-  margin: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
   border-radius: 5px;
 }
 
