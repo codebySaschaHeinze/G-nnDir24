@@ -1,7 +1,6 @@
 * {
   margin: 0;
   scroll-behavior: smooth;
-  font-family: "MyFont", sans-serif;
 }
 html,
 body {
@@ -11,11 +10,12 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  font-family: "Puritan", sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: rgb(136, 136, 136);
 }
 
 a:hover {
@@ -39,9 +39,8 @@ nav {
 .nav-content {
   max-width: 1920px;
   width: 100%;
-  margin: 0;
   display: flex;
-  flex-direction: column;
+  z-index: 1;
 }
 
 main {
@@ -55,6 +54,7 @@ footer {
   display: flex;
   height: 60px;
   background-color: rgb(1, 58, 0);
+  color: rgb(136, 136, 136);
 }
 
 .footer-content {

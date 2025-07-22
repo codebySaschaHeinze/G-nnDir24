@@ -103,9 +103,17 @@ aside h4 {
 .total-price-button {
   height: 50px;
   width: auto;
-  background-color: rgb(2, 134, 0);
-  color: white;
+  background-color: rgba(2, 134, 0, 0.85);
+  color: rgb(255, 255, 255);
   cursor: pointer;
   border-radius: 16px;
   font-size: 1.2rem;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1.5px solid rgb(0, 107, 0);
+  box-shadow: 0 0 7px 1px rgba(0, 107, 0, 0.591);
+}
+
+.total-price-button:hover {
+  transform: scale(1.01);
 }

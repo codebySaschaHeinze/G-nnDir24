@@ -9,7 +9,7 @@ function addProductsTemplate(productIndex) {
                 .replace(".", ",")} €</p>
             </div>
             <button onclick="addToCart(${productIndex})" class="card-plus-img">
-              <img src="./assets/img/plus.png" alt="" />
+              <img src="./assets/imgs/plus.png" alt="" />
             </button>
           </div>`;
 }
@@ -23,11 +23,11 @@ function addProductsToCartTemplate(cartIndex) {
   </div>
   <div class="plus-and-minus">
     <button onclick="minusCartProduct(${cartIndex})" class="minus-button-cart">
-      <img class="minus-button-img" src="./assets/img/minus.png" alt="" />
+      <img class="minus-button-img" src="./assets/imgs/minus.png" alt="" />
     </button>
     <p class="cart-product-amount">${cart[cartIndex].amount}</p>
     <button onclick="plusCartProduct(${cartIndex})" class="plus-button-cart">
-      <img class="plus-button-img" src="./assets/img/plus.png" alt="" />
+      <img class="plus-button-img" src="./assets/imgs/plus.png" alt="" />
     </button>
   </div>
 </div>`;

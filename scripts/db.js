@@ -5,7 +5,7 @@ let products = [
     description: "Scharfe Salami, Jalapeños, Peperoniwurst und Tomatensauce.",
   },
   {
-    name: "Pizza Salami Classico",
+    name: "Pizza Classico",
     price: 10.99,
     description: "Würzige Salami auf Tomaten-Mozzarella-Basis – der Klassiker.",
   },
@@ -25,7 +25,7 @@ let products = [
     description: "Mozzarella, Bacon, Peperoni und Jalapeños auf dickem Teig.",
   },
   {
-    name: "Pizza Käse Deluxe",
+    name: "Pizza Deluxe",
     price: 10.99,
     description: "Doppelt Käse, dicker Boden, würzige Salamischeiben.",
   },
