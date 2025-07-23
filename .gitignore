@@ -1,0 +1,27 @@
+# Node modules (falls du mal npm-Tools nutzt)
+node_modules/
+
+# Temporäre Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Editor & OS-spezifische Dateien
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.swp
+*.tmp
+
+# VS Code
+.vscode/
+.history/
+
+# JSDoc-Ausgabe (nur ignorieren, wenn NICHT docs/)
+out/
+
+# Build-Ordner, falls mal vorhanden
+dist/
+build/

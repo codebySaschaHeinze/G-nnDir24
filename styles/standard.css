@@ -5,7 +5,7 @@
 html,
 body {
   display: flex;
-  height: 100%;
+  height: 100vh;
   min-height: 100vh;
   margin: 0;
   display: flex;
@@ -56,8 +56,9 @@ main {
 }
 
 footer {
+  width: 100%;
   display: flex;
-  height: 60px;
+  height: 80px;
   background-color: rgb(1, 58, 0);
   color: rgb(136, 136, 136);
 }

@@ -40,22 +40,23 @@
 }
 
 .shopping-cart {
-  background-color: rgb(255, 255, 255);
-  width: 30vw;
   position: sticky;
-  top: 60px;
-  height: calc(100vh - 60px);
+  top: 63px;
+  align-self: flex-start;
+  height: fit-content;
+  max-height: calc(100vh - 100px);
   overflow-y: auto;
+  background-color: white;
+  width: 30vw;
   border: 2px solid rgb(28, 111, 86);
-  margin-left: 3px;
-  margin-right: 3px;
+  margin: 3px;
+  margin-bottom: 5px;
   border-radius: 5px;
 }
 
 .course-container {
   display: flex;
   align-items: center;
-  /* background-color: rgba(255, 255, 255, 0.394); */
   width: 100%;
   align-items: flex-end;
   height: 90px;
@@ -182,7 +183,7 @@
   border-radius: 30%;
   background: none;
   cursor: pointer;
-  color: rgb(28, 111, 86); /* gleiche Farbe wie Plus/Minus-Buttons */
+  color: rgb(28, 111, 86);
   font-weight: bold;
   font-size: 1.5rem;
   display: flex;
@@ -200,7 +201,7 @@
   padding: 10px 20px;
   box-sizing: border-box;
   display: flex;
-  justify-content: center; /* Zentriert das h4 */
+  justify-content: center;
   align-items: center;
 }
 
@@ -234,6 +235,7 @@
   justify-content: center;
   padding-top: 12px;
   border-top: 1px solid #ccc;
+  width: 80%;
 }
 
 .order-overlay-container {
