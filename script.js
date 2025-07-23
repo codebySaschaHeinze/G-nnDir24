@@ -183,18 +183,21 @@ function showOrderOverlay() {
   orderOverlayRef.classList.remove("d-none");
 }
 
-/** saves the current condition in the local storage  */
+/** saves the current condition in the local storage
+ */
 function saveCartToLocalStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
-/** gives the saved informations to the functions */
+/** gives the saved informations to the functions
+ */
 function loadCartFromLocalStorage() {
   let savedCart = localStorage.getItem("cart");
   if (savedCart) {
     cart = JSON.parse(savedCart);
   }
 }
-/** helper function to reduce code blocks */
+/** helper function to reduce code
+ */
 function renderCartAndRenderTotalPriceAndIfCartIsEmpty() {
   renderCart();
   renderTotalPrice();
