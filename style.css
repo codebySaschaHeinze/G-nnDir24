@@ -149,7 +149,7 @@
 .total-price-container-desktop {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 10px 5px 10px 5px;
 }
 
 .cart-overlay-container {
@@ -173,7 +173,7 @@
   box-shadow: 0 0 10px 5px rgba(28, 111, 86, 0.333);
 }
 
-@media (max-width: 745px) {
+@media (max-width: 800px) {
   .shopping-cart {
     display: none;
   }

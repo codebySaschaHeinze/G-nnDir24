@@ -38,7 +38,7 @@ function ifCartIsEmpty() {
   }
 }
 
-// Prduktkarte zum Warenkorb hinzufügen
+// ausgewähltes Prdukt zum Warenkorb hinzufügen
 function addToCart(productIndex) {
   for (let cartIndex = 0; cartIndex < cart.length; cartIndex++) {
     if (cart[cartIndex].name === products[productIndex].name) {
@@ -96,7 +96,6 @@ function renderTotalPrice() {
     desktopRef.innerHTML = renderTotalPriceButtonDesktopTemplate();
   }
 }
-
 // rendert das Warenkorb Overlay
 function renderCartOverlay() {
   const overlayRef = document.getElementById("cart_overlay_container");
