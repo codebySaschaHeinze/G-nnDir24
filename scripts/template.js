@@ -1,4 +1,3 @@
-// alle Produkte im Content rendern
 function addProductsTemplate(productIndex) {
   let product = products[productIndex];
   return `
@@ -15,7 +14,6 @@ function addProductsTemplate(productIndex) {
           `;
 }
 
-// Warenkorb rendern
 function addProductsToCartTemplate(cartIndex) {
   let product = cart[cartIndex];
   return `
@@ -37,7 +35,6 @@ function addProductsToCartTemplate(cartIndex) {
           `;
 }
 
-// ausgewählte Produkte zum Warenkorb hinzufügen
 function addProductsToCartOverlayTemplate(cartIndex) {
   let product = cart[cartIndex];
   return `
@@ -59,7 +56,6 @@ function addProductsToCartOverlayTemplate(cartIndex) {
           `;
 }
 
-// Warenkorb im mobile wird gerendert
 function cartOverlayTemplate() {
   let content = "";
 
@@ -85,7 +81,6 @@ function cartOverlayTemplate() {
           `;
 }
 
-// Button mit Gesamtsumme in mobile Variante erstellen
 function renderTotalPriceButtonMobileTemplate() {
   return `
             <button onclick="renderCartOverlay()" class="total-price-button">
@@ -94,7 +89,6 @@ function renderTotalPriceButtonMobileTemplate() {
           `;
 }
 
-// Button mit Gesamtsumme in desktop Variante erstellen
 function renderTotalPriceButtonDesktopTemplate() {
   return `
             <button onclick="orderAccepted()" class="total-price-button">

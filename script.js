@@ -94,6 +94,7 @@ function calculateAllCartProducts(cart) {
   }
   return totalPrices;
 }
+
 /** show total price on the total-price-button
  * there is a button on the desktop-version
  * and one on the mobile-version (mediaQuery)
@@ -188,6 +189,7 @@ function showOrderOverlay() {
 function saveCartToLocalStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
+
 /** gives the saved informations to the functions
  */
 function loadCartFromLocalStorage() {
@@ -196,6 +198,7 @@ function loadCartFromLocalStorage() {
     cart = JSON.parse(savedCart);
   }
 }
+
 /** helper function to reduce code
  */
 function renderCartAndRenderTotalPriceAndIfCartIsEmpty() {
