@@ -116,6 +116,7 @@
   margin: 2%;
   padding: 2%;
   border-radius: 4px;
+  width: 90%;
 }
 
 .product-and-price {
@@ -154,7 +155,7 @@
 
 .cart-overlay-container {
   background-color: rgb(255, 255, 255);
-  width: 50vw;
+  width: 80vw;
   height: 70vh;
   position: fixed;
   top: 50%;
@@ -171,6 +172,89 @@
   align-items: center;
   text-align: center;
   box-shadow: 0 0 10px 5px rgba(28, 111, 86, 0.333);
+}
+
+.close-overlay-button {
+  background: transparent;
+  border: none;
+  height: 31px;
+  width: 31px;
+  border-radius: 30%;
+  background: none;
+  cursor: pointer;
+  color: rgb(28, 111, 86); /* gleiche Farbe wie Plus/Minus-Buttons */
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-overlay-button:hover {
+  transform: scale(1.1);
+}
+
+.cart-overlay-header {
+  position: relative;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center; /* Zentriert das h4 */
+  align-items: center;
+}
+
+.overlay-title {
+  margin: 0 auto;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.close-overlay-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cart-overlay-scrollable {
+  overflow-y: auto;
+  flex-grow: 1;
+  max-height: 60vh;
+  width: 90%;
+  padding-right: 8px;
+  margin-bottom: 16px;
+}
+
+.cart-overlay-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+  border-top: 1px solid #ccc;
+}
+
+.order-overlay-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgb(28, 111, 86);
+  border-radius: 8px;
+  padding: 24px;
+  z-index: 13;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.order-confirmation-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 800px) {

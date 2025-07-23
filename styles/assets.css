@@ -121,6 +121,7 @@ aside h4 {
   border: 1.5px solid rgb(0, 107, 0);
   box-shadow: 0 0 7px 1px rgba(0, 107, 0, 0.591);
   pointer-events: auto;
+  margin-bottom: 10px;
 }
 
 .total-price-button:hover {
@@ -128,5 +129,5 @@ aside h4 {
 }
 
 .cart-overlay-container h4 {
-  margin-top: 20px;
+  margin-bottom: 40px;
 }

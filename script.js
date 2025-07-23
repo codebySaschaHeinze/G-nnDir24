@@ -46,6 +46,7 @@ function addToCart(productIndex) {
       renderCart();
       renderTotalPrice();
       ifCartIsEmpty();
+      updateOverlayIfVisible();
       return;
     }
   }
@@ -53,6 +54,7 @@ function addToCart(productIndex) {
   renderCart();
   renderTotalPrice();
   ifCartIsEmpty();
+  updateOverlayIfVisible();
 }
 
 // Warenkorb - price und amount erhöhen
@@ -100,13 +102,55 @@ function renderTotalPrice() {
 function renderCartOverlay() {
   const overlayRef = document.getElementById("cart_overlay_container");
   overlayRef.classList.remove("d-none");
+  let mobileButton = document.getElementById("total_price_container");
+  if (mobileButton) {
+    mobileButton.classList.add("d-none");
+  }
+
   renderCartOverlayContent();
 }
 
 // bei onclick auf Gesamtpreisbutton rendert der Warenkorb im Overlay
 function renderCartOverlayContent() {
   const overlayRef = document.getElementById("cart_overlay_container");
-  let cartRef = `<h4>Warenkorb</h4>`;
-  cartRef += cartOverlayTemplate();
-  overlayRef.innerHTML = cartRef;
+  overlayRef.innerHTML = cartOverlayTemplate();
+}
+
+/*  */
+function updateOverlayIfVisible() {
+  let overlayRef = document.getElementById("cart_overlay_container");
+  if (!overlayRef.classList.contains("d-none")) {
+    renderCartOverlayContent();
+  }
+}
+// schließt bei onclick das Warenkorb Overlay
+function closeCartOverlay() {
+  let overlayRef = document.getElementById("cart_overlay_container");
+  overlayRef.classList.add("d-none");
+  let mobileButton = document.getElementById("total_price_container");
+  if (mobileButton) {
+    mobileButton.classList.remove("d-none");
+  }
+}
+// Bestellung abgeben
+function orderAccepted() {
+  if (cart.length === 0) return;
+  closeCartOverlay();
+  showOrderOverlay();
+  cart = [];
+  renderCart();
+  renderTotalPrice();
+  ifCartIsEmpty();
+}
+
+function closeOrderOverlay() {
+  const overlayRef = document.getElementById("order_overlay_container");
+  overlayRef.classList.add("d-none");
+  overlayRef.innerHTML = "";
+}
+
+function showOrderOverlay() {
+  const orderOverlayRef = document.getElementById("order_overlay_container");
+  orderOverlayRef.innerHTML = orderOverlayTemplate();
+  orderOverlayRef.classList.remove("d-none");
 }
