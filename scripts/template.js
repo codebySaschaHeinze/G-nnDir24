@@ -72,17 +72,17 @@ function cartOverlayTemplate() {
   }
 
   return `
-          <div class="cart-overlay-header">
-            <h4 class="overlay-title">Warenkorb</h4>
-            <button onclick="closeCartOverlay()" class="close-overlay-button">✖</button>
-          </div>
-          <div class="cart-overlay-scrollable">${content}</div>
-          <div class="cart-overlay-footer">
-            <button onclick="orderAccepted()" class="total-price-button">
-              Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €
-            </button>
-          </div>
-        `;
+            <div class="cart-overlay-header">
+              <h4 class="overlay-title">Warenkorb</h4>
+              <button onclick="closeCartOverlay()" class="close-overlay-button">✖</button>
+            </div>
+            <div class="cart-overlay-scrollable">${content}</div>
+            <div class="cart-overlay-footer">
+              <button onclick="orderAccepted()" class="total-price-button">
+                Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €
+              </button>
+            </div>
+          `;
 }
 
 // Button mit Gesamtsumme in mobile Variante erstellen
@@ -97,40 +97,26 @@ function renderTotalPriceButtonMobileTemplate() {
 // Button mit Gesamtsumme in desktop Variante erstellen
 function renderTotalPriceButtonDesktopTemplate() {
   return `
-    <button onclick="orderAccepted()" class="total-price-button">
-      Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €
-    </button>
-  `;
+            <button onclick="orderAccepted()" class="total-price-button">
+              Gesamtpreis: ${calculateAllCartProducts(cart).toFixed(2).replace(".", ",")} €
+            </button>
+          `;
 }
 
 function orderOverlayTemplate() {
   return `
-    <div class="order-overlay">
-      <p class="order-message">Bestellung erfolgreich abgegeben!</p>
-      <button onclick="closeOrderOverlay()" class="close-overlay-button">✖</button>
-    </div>
-  `;
+            <div class="order-overlay">
+              <p class="order-message">Bestellung erfolgreich abgegeben!</p>
+              <button onclick="closeOrderOverlay()" class="close-overlay-button">✖</button>
+            </div>
+          `;
 }
 
 function orderAcceptedTemplate() {
   return `
-    <div class="order-success-box">
-      <p>Bestellung erfolgreich abgegeben!</p>
-      <button onclick="closeOrderSuccess()" class="close-overlay-button">✖</button>
-    </div>
-  `;
-}
-
-function showOrderOverlay() {
-  const overlay = document.createElement("div");
-  overlay.classList.add("order-success-overlay");
-  overlay.innerHTML = orderAcceptedTemplate();
-  document.body.appendChild(overlay);
-}
-
-function closeOrderSuccess() {
-  const overlay = document.querySelector(".order-success-overlay");
-  if (overlay) {
-    overlay.remove();
-  }
+            <div class="order-success-box">
+              <p>Bestellung erfolgreich abgegeben!</p>
+              <button onclick="closeOrderSuccess()" class="close-overlay-button">✖</button>
+            </div>
+          `;
 }

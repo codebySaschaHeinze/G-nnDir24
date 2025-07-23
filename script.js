@@ -1,8 +1,7 @@
 function init() {
+  loadCartFromStorage();
   renderProducts();
-  ifCartIsEmpty();
-  renderCart();
-  renderTotalPrice();
+  renderCartAndRenderTotalPriceAndIfCartIsEmpty();
 }
 
 let cart = [];
@@ -43,26 +42,23 @@ function addToCart(productIndex) {
   for (let cartIndex = 0; cartIndex < cart.length; cartIndex++) {
     if (cart[cartIndex].name === products[productIndex].name) {
       cart[cartIndex].amount++;
-      renderCart();
-      renderTotalPrice();
-      ifCartIsEmpty();
+      saveCartToStorage();
+      renderCartAndRenderTotalPriceAndIfCartIsEmpty();
       updateOverlayIfVisible();
       return;
     }
   }
   cart.push({ name: products[productIndex].name, amount: 1, price: products[productIndex].price });
-  renderCart();
-  renderTotalPrice();
-  ifCartIsEmpty();
+  saveCartToStorage();
+  renderCartAndRenderTotalPriceAndIfCartIsEmpty();
   updateOverlayIfVisible();
 }
 
 // Warenkorb - price und amount erhöhen
 function plusCartProduct(cartIndex) {
   cart[cartIndex].amount++;
-  renderCart();
-  renderTotalPrice();
-  ifCartIsEmpty();
+  saveCartToStorage();
+  renderCartAndRenderTotalPriceAndIfCartIsEmpty();
   renderCartOverlayContent();
 }
 
@@ -73,9 +69,8 @@ function minusCartProduct(cartIndex) {
   } else {
     cart[cartIndex].amount--;
   }
-  renderCart();
-  renderTotalPrice();
-  ifCartIsEmpty();
+  saveCartToStorage();
+  renderCartAndRenderTotalPriceAndIfCartIsEmpty();
   renderCartOverlayContent();
 }
 
@@ -138,9 +133,8 @@ function orderAccepted() {
   closeCartOverlay();
   showOrderOverlay();
   cart = [];
-  renderCart();
-  renderTotalPrice();
-  ifCartIsEmpty();
+  saveCartToStorage();
+  renderCartAndRenderTotalPriceAndIfCartIsEmpty();
 }
 
 function closeOrderOverlay() {
@@ -153,4 +147,21 @@ function showOrderOverlay() {
   const orderOverlayRef = document.getElementById("order_overlay_container");
   orderOverlayRef.innerHTML = orderOverlayTemplate();
   orderOverlayRef.classList.remove("d-none");
+}
+
+function saveCartToStorage() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function loadCartFromStorage() {
+  const savedCart = localStorage.getItem("cart");
+  if (savedCart) {
+    cart = JSON.parse(savedCart);
+  }
+}
+
+function renderCartAndRenderTotalPriceAndIfCartIsEmpty() {
+  renderCart();
+  renderTotalPrice();
+  ifCartIsEmpty();
 }
