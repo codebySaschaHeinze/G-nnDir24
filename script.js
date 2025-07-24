@@ -67,7 +67,7 @@ function addToCart(productIndex) {
 }
 
 /** Increase price and amount from product in cartIndex.
- *  @param {string} cartIndex - Selectetd products in the cart.
+ *  @param {Array} cartIndex - Selectetd products in the cart.
  */
 function plusCartProduct(cartIndex) {
   cart[cartIndex].amount++;
