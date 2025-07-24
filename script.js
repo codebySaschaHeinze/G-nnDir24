@@ -12,8 +12,7 @@ function init() {
   renderCartAndRenderTotalPriceAndIfCartIsEmpty();
 }
 
-/**
- * "productIndex" contains all products from the products-array,
+/** "productIndex" contains all products from the products-array,
  *  and gives it to addProductsTemplate.
  */
 function renderProducts() {
