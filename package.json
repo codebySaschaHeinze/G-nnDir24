@@ -42,5 +42,8 @@
     "url": "https://github.com/codebySaschaHeinze/G-nnDir24/issues"
   },
   "homepage": "https://github.com/codebySaschaHeinze/G-nnDir24#readme",
+  "directories": {
+    "doc": "docs"
+  },
   "description": ""
 }

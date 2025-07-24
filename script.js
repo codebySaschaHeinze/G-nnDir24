@@ -79,7 +79,7 @@ function plusCartProduct(cartIndex) {
 
 /** Decrease price and amount from product in cartIndex.
  *  Decrease both IF amount is higher than 1.
- *  ELSE - splice product out of the cart.array.
+ *  ELSE - splice product out of the cart-array.
  *  @param {Array} cartIndex - Selectetd products in the cart.
  */
 function minusCartProduct(cartIndex) {
