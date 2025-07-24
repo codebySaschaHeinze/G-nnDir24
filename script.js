@@ -49,7 +49,7 @@ function ifCartIsEmpty() {
 
 /** Add selected product to Cart and
  *  checking if selectetd product is already in cart.
- * @param {string} productIndex - All products on the menu.
+ *  @param {Array} productIndex - All products on the menu.
  */
 function addToCart(productIndex) {
   for (let cartIndex = 0; cartIndex < cart.length; cartIndex++) {
@@ -80,7 +80,7 @@ function plusCartProduct(cartIndex) {
 /** Decrease price and amount from product in cartIndex.
  *  Decrease both IF amount is higher than 1.
  *  ELSE - splice product out of the cart.array.
- *  @param {string} cartIndex - Selectetd products in the cart.
+ *  @param {Array} cartIndex - Selectetd products in the cart.
  */
 function minusCartProduct(cartIndex) {
   if (cart[cartIndex].amount <= 1) {
@@ -94,7 +94,7 @@ function minusCartProduct(cartIndex) {
 }
 
 /** Calculate the price of a product in the cart-array. (price * amount)
- *  @param {string} cart - Products in the cart.
+ *  @param {Array} cart - Products in the cart.
  */
 function calculateAllCartProducts(cart) {
   let totalPrices = 0;
