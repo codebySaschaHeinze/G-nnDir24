@@ -1,14 +1,20 @@
+/** The initially empty shopping cart.
+ */
+let cart = [];
+
+/** Initiate all functions (<body onload="init()">).
+ *  Load the localStorage.
+ *  Show all Products in the menu.
+ */
 function init() {
   loadCartFromLocalStorage();
   renderProducts();
   renderCartAndRenderTotalPriceAndIfCartIsEmpty();
 }
 
-let cart = [];
-
 /**
- * productIndex contains all products from the products-array
- * and gives it to addProductsTemplate
+ * "productIndex" contains all products from the products-array,
+ *  and gives it to addProductsTemplate.
  */
 function renderProducts() {
   let productsRef = document.getElementById("all_products");
@@ -18,8 +24,8 @@ function renderProducts() {
   }
 }
 
-/** cartIndex contains all products from the products-array
- *  and gives it to addProductsToCartTemplate
+/** "cartIndex" contains all products from the products-array
+ *   and gives it to addProductsToCartTemplate.
  */
 function renderCart() {
   let cartRef = document.getElementById("cart_products_container");
@@ -30,7 +36,7 @@ function renderCart() {
   }
 }
 
-/** checks if cart is empty
+/** Checking if cart is empty
  */
 function ifCartIsEmpty() {
   let emptyCart = document.getElementById("empty_cart");
@@ -41,8 +47,9 @@ function ifCartIsEmpty() {
   }
 }
 
-/** add selected product to Cart
- *  checks if selectetd product is already in cart
+/** Add selected product to Cart and
+ *  checking if selectetd product is already in cart.
+ * @param {string} productIndex - All products on the menu.
  */
 function addToCart(productIndex) {
   for (let cartIndex = 0; cartIndex < cart.length; cartIndex++) {
@@ -60,7 +67,8 @@ function addToCart(productIndex) {
   updateOverlayIfVisible();
 }
 
-/** increase price and amount from product in cartIndex
+/** Increase price and amount from product in cartIndex.
+ *  @param {string} cartIndex - Selectetd products in the cart.
  */
 function plusCartProduct(cartIndex) {
   cart[cartIndex].amount++;
@@ -69,9 +77,10 @@ function plusCartProduct(cartIndex) {
   renderCartOverlayContent();
 }
 
-/** decrease price and amount from product in cartIndex
- *  decrease both IF amount is higher than 1
- *  ELSE - splice product out of the cart.array
+/** Decrease price and amount from product in cartIndex.
+ *  Decrease both IF amount is higher than 1.
+ *  ELSE - splice product out of the cart.array.
+ *  @param {string} cartIndex - Selectetd products in the cart.
  */
 function minusCartProduct(cartIndex) {
   if (cart[cartIndex].amount <= 1) {
@@ -84,8 +93,8 @@ function minusCartProduct(cartIndex) {
   renderCartOverlayContent();
 }
 
-/** calculate the price of a product in the cart-array
- *  price * amount
+/** Calculate the price of a product in the cart-array. (price * amount)
+ *  @param {string} cart - Products in the cart.
  */
 function calculateAllCartProducts(cart) {
   let totalPrices = 0;
@@ -95,9 +104,9 @@ function calculateAllCartProducts(cart) {
   return totalPrices;
 }
 
-/** show total price on the total-price-button
- * there is a button on the desktop-version
- * and one on the mobile-version (mediaQuery)
+/** Shows total price on the total-price-button.
+ *  There´s a button on the desktop-version
+ *  and one on the mobile-version (mediaQuery),
  */
 function renderTotalPrice() {
   let mobileRef = document.getElementById("total_price_container");
@@ -110,8 +119,8 @@ function renderTotalPrice() {
   }
 }
 
-/** shows the cart overlay in the mobile-version (mediaQuery)
- *  removes the total-price-button (if there)
+/** Shows the cart overlay in the mobile-version (mediaQuery).
+ *  Removes the total-price-button (if there).
  */
 function renderCartOverlay() {
   const overlayRef = document.getElementById("cart_overlay_container");
@@ -124,16 +133,15 @@ function renderCartOverlay() {
   renderCartOverlayContent();
 }
 
-/** showing the cart overlay at onclick="renderCartOverlay()"
- * (total-price-button in the mobile-version)
- *
+/** Showing the cart overlay at onclick="renderCartOverlay()"
+ *  (total-price-button in the mobile-version).
  */
 function renderCartOverlayContent() {
   const overlayRef = document.getElementById("cart_overlay_container");
   overlayRef.innerHTML = cartOverlayTemplate();
 }
 
-/** update the cart overlay if cart_overlay_container is visible
+/** Update the cart overlay if cart_overlay_container is visible.
  */
 function updateOverlayIfVisible() {
   let overlayRef = document.getElementById("cart_overlay_container");
@@ -142,8 +150,8 @@ function updateOverlayIfVisible() {
   }
 }
 
-/** close the overlay at onclick="closeCartOverlay()"
- * (close-overlay-button in the mobile-version)
+/** Close the overlay at onclick="closeCartOverlay()"
+ *  (close-overlay-button in the mobile-version).
  */
 function closeCartOverlay() {
   let overlayRef = document.getElementById("cart_overlay_container");
@@ -154,8 +162,8 @@ function closeCartOverlay() {
   }
 }
 
-/** shows showOrderOverlay if there are products in the cart
- *  if there are no products in the cart, nothing happens
+/** Showing the showOrderOverlay if there are products in the cart.
+ *  If there are no products in the cart, nothing happens.
  */
 function orderAccepted() {
   if (cart.length === 0) return;
@@ -166,8 +174,8 @@ function orderAccepted() {
   renderCartAndRenderTotalPriceAndIfCartIsEmpty();
 }
 
-/** close the order overlay at onclick="closeOrderOverlay()"
- * (close-overlay-button in the mobile-version)
+/** Close the order overlay at onclick="closeOrderOverlay()"
+ *  (close-overlay-button in the mobile-version).
  */
 function closeOrderOverlay() {
   const overlayRef = document.getElementById("order_overlay_container");
@@ -175,8 +183,8 @@ function closeOrderOverlay() {
   overlayRef.innerHTML = "";
 }
 
-/** shows the order overlay if the order is accepted
- * and gives it to the orderOverlayTemplate
+/** Shows the order overlay if the order is accepted
+ *  and gives it to the orderOverlayTemplate
  */
 function showOrderOverlay() {
   const orderOverlayRef = document.getElementById("order_overlay_container");
@@ -184,13 +192,13 @@ function showOrderOverlay() {
   orderOverlayRef.classList.remove("d-none");
 }
 
-/** saves the current condition in the local storage
+/** Saves the current conditions in the local storage.
  */
 function saveCartToLocalStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-/** gives the saved informations to the functions
+/** Gives the saved informations to the functions.
  */
 function loadCartFromLocalStorage() {
   let savedCart = localStorage.getItem("cart");
@@ -199,7 +207,7 @@ function loadCartFromLocalStorage() {
   }
 }
 
-/** helper function to reduce code
+/** Helper function to reduce code
  */
 function renderCartAndRenderTotalPriceAndIfCartIsEmpty() {
   renderCart();
