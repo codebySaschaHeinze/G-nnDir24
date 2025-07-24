@@ -27,7 +27,7 @@
   display: flex;
   align-items: start;
   flex-direction: column;
-  /* background-color: rgb(177, 195, 174); */
+  padding-top: 25px;
   width: 100%;
   display: flex;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.266);
@@ -43,7 +43,7 @@
   position: sticky;
   top: 63px;
   align-self: flex-start;
-  height: fit-content;
+  height: 1000px;
   max-height: calc(100vh - 100px);
   overflow-y: auto;
   background-color: white;
@@ -59,8 +59,7 @@
   align-items: center;
   width: 100%;
   align-items: flex-end;
-  height: 90px;
-  position: relative;
+  height: 95px;
 }
 
 .pizza-container {
@@ -243,7 +242,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255);
   border-radius: 8px;
   padding: 10px;
   z-index: 13;
