@@ -36,7 +36,7 @@ function renderCart() {
   }
 }
 
-/** Checking if cart is empty
+/** Checking if cart is empty.
  */
 function ifCartIsEmpty() {
   let emptyCart = document.getElementById("empty_cart");
