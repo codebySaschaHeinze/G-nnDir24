@@ -5,9 +5,9 @@
 html,
 body {
   display: flex;
-  height: 100vh;
-  min-height: 100vh;
+  height: 100%;
   margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   font-family: "ubuntu", sans-serif;
@@ -23,6 +23,7 @@ a:hover {
 }
 
 nav {
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,7 +49,7 @@ nav {
 
 main {
   width: 70vw;
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,11 +57,14 @@ main {
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
   width: 100%;
   display: flex;
-  height: 80px;
+  height: 50px;
   background-color: rgb(1, 58, 0);
   color: rgb(136, 136, 136);
+  z-index: 12;
 }
 
 .footer-content {
@@ -78,4 +82,8 @@ footer {
 .footer-links {
   display: flex;
   flex-direction: column;
+}
+
+.impressum-data-protection {
+  margin: 30px;
 }
